@@ -88,11 +88,10 @@ body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(
 .conclusion-hero .verdict { font-size: 20px; font-weight: 500; color: var(--white); line-height: 1.5; }
 .conclusion-hero .verdict strong { color: #5DCAA5; }
 .conclusion-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
-.conclusion-block { }
 .conclusion-block h3 { font-size: 11px; font-weight: 500; color: #5a5550; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.08em; font-family: 'DM Mono', monospace; padding-bottom: 6px; border-bottom: 1px solid #1e1e1e; }
 .conclusion-block p { font-size: 13px; color: #888780; line-height: 1.8; }
 .conclusion-block strong { color: var(--white); font-weight: 500; }
-.conclusion-block .highlight { background: #1a2a24; border-left: 2px solid #1D9E75; padding: 12px 16px; margin-top: 12px; border-radius: 0 2px 2px 0; }
+.conclusion-block .highlight { background: #1a2a24; border-left: 2px solid #1D9E75; padding: 12px 16px; margin-top: 12px; }
 .conclusion-block .highlight p { color: #9FE1CB; font-family: 'DM Mono', monospace; font-size: 12px; }
 .footer { border-top: 1px solid var(--gray-200); padding-top: 20px; display: flex; justify-content: space-between; }
 .footer-left { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--gray-400); }
@@ -108,7 +107,7 @@ body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(
     <div class="subtitle">DISSERTAÇÃO MESTRADO · ISEP · RITA PINTO · 2026</div>
   </div>
   <div class="header-right">
-    <div class="date">07 JUNHO 2026 · 00:51</div>
+    <div class="date">08 JUNHO 2026 · 00:56</div>
     <div class="badge">v2.0 · 13 MÉTRICAS · 15 CONVERSAS</div>
   </div>
 </div>
@@ -117,27 +116,27 @@ body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(
   <div class="metric-box">
     <div class="metric-label">Dataset</div>
     <div class="metric-value">15</div>
-    <div class="metric-sub" style="color:var(--gray-200)">conversas golden</div>
+    <div class="metric-sub" style="color:var(--gray-200)">conversas de avaliação</div>
   </div>
   <div class="metric-box">
-    <div class="metric-label">Modelo escolhido</div>
-    <div class="metric-value" style="font-size:16px;padding-top:4px;">llama-4-scout</div>
-    <div class="metric-sub">F1=54% · 0.70s · 100% parse</div>
+    <div class="metric-label">Melhor F1</div>
+    <div class="metric-value">54,7%</div>
+    <div class="metric-sub">llama-3.3-70b</div>
   </div>
   <div class="metric-box">
     <div class="metric-label">Menor latência</div>
-    <div class="metric-value">0.70s</div>
+    <div class="metric-value">0,79s</div>
     <div class="metric-sub">llama-4-scout-17b</div>
   </div>
   <div class="metric-box">
-    <div class="metric-label">Melhor F1 válido</div>
-    <div class="metric-value">54.0%</div>
-    <div class="metric-sub">100% parse rate</div>
+    <div class="metric-label">Modelo selecionado</div>
+    <div class="metric-value" style="font-size:15px;padding-top:6px;">llama-4-scout</div>
+    <div class="metric-sub">F1=53,1% · 0,79s · 100% parse</div>
   </div>
   <div class="metric-box">
-    <div class="metric-label">Hallucination</div>
-    <div class="metric-value">3.3%</div>
-    <div class="metric-sub">llama-4-scout</div>
+    <div class="metric-label">Métricas avaliadas</div>
+    <div class="metric-value">13</div>
+    <div class="metric-sub">por modelo, por conversa</div>
   </div>
 </div>
 
@@ -145,111 +144,115 @@ body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(
   <div class="section-header">
     <span class="section-label">01</span>
     <div class="section-line"></div>
-    <span class="section-label">Ranking por F1-Score (15 conversas)</span>
+    <span class="section-label">Ranking por F1-Score — 15 conversas · 4 modelos</span>
   </div>
   <div class="models-grid">
 
+    <!-- RANK 1 -->
     <div class="model-row top">
       <div>
         <div class="model-pos">01</div>
+        <div class="model-name">llama-3.3-70b-versatile</div>
+        <div class="model-meta">Meta · 70B · Groq · gratuito</div>
+        <div class="model-tags">
+          <span class="tag tag-oss">open-source</span>
+          <span class="tag tag-warn">melhor F1</span>
+        </div>
+      </div>
+      <div class="bar-group">
+        <div class="bar-item"><span class="bar-label">F1</span><div class="bar-track"><div class="bar-fill" style="width:54.7%;background:#1a7a5e;"></div></div><span class="bar-val" style="color:#1a7a5e;">54,7%</span></div>
+        <div class="bar-item"><span class="bar-label">Precision</span><div class="bar-track"><div class="bar-fill" style="width:61.1%;background:#1a7a5e;"></div></div><span class="bar-val">61,1%</span></div>
+        <div class="bar-item"><span class="bar-label">Recall</span><div class="bar-track"><div class="bar-fill" style="width:49.8%;background:#1a7a5e;"></div></div><span class="bar-val">49,8%</span></div>
+        <div class="bar-item"><span class="bar-label">ParseRate</span><div class="bar-track"><div class="bar-fill" style="width:100%;background:#9FE1CB;"></div></div><span class="bar-val">100%</span></div>
+        <div class="bar-item"><span class="bar-label">Halluc.</span><div class="bar-track"><div class="bar-fill" style="width:3.3%;background:#E24B4A;"></div></div><span class="bar-val">3,3%</span></div>
+      </div>
+      <div class="model-stats">
+        <div><div class="stat-label">LATÊNCIA</div><div class="stat-value">3,05<span class="stat-unit">s</span></div></div>
+        <div><div class="stat-label">TOK/CAMPO</div><div class="stat-value">242<span class="stat-unit">tok</span></div></div>
+        <div><div class="stat-label">CONVERSAS OK</div><div class="stat-value">15<span class="stat-unit">/15</span></div></div>
+        <div><div class="stat-label">SUMMARY</div><div class="stat-value" style="color:#b85c00;">13<span class="stat-unit">%</span></div></div>
+      </div>
+    </div>
+
+    <!-- RANK 2 -->
+    <div class="model-row top" style="background:#f0f8ff;">
+      <div>
+        <div class="model-pos" style="color:#1a4a7a;">02</div>
         <div class="model-name">llama-4-scout-17b</div>
         <div class="model-meta">Meta · 17B · Groq · gratuito</div>
         <div class="model-tags">
           <span class="tag tag-oss">open-source</span>
-          <span class="tag tag-rec">usar este</span>
+          <span class="tag tag-rec">selecionado</span>
         </div>
       </div>
       <div class="bar-group">
-        <div class="bar-item"><span class="bar-label">F1</span><div class="bar-track"><div class="bar-fill" style="width:54%;background:#1a7a5e;"></div></div><span class="bar-val" style="color:#1a7a5e;">54.0%</span></div>
-        <div class="bar-item"><span class="bar-label">Precision</span><div class="bar-track"><div class="bar-fill" style="width:62.6%;background:#1a7a5e;"></div></div><span class="bar-val">62.6%</span></div>
-        <div class="bar-item"><span class="bar-label">Recall</span><div class="bar-track"><div class="bar-fill" style="width:47.9%;background:#1a7a5e;"></div></div><span class="bar-val">47.9%</span></div>
+        <div class="bar-item"><span class="bar-label">F1</span><div class="bar-track"><div class="bar-fill" style="width:53.1%;background:#1a4a7a;"></div></div><span class="bar-val" style="color:#1a4a7a;">53,1%</span></div>
+        <div class="bar-item"><span class="bar-label">Precision</span><div class="bar-track"><div class="bar-fill" style="width:61.4%;background:#1a4a7a;"></div></div><span class="bar-val">61,4%</span></div>
+        <div class="bar-item"><span class="bar-label">Recall</span><div class="bar-track"><div class="bar-fill" style="width:47.2%;background:#1a4a7a;"></div></div><span class="bar-val">47,2%</span></div>
         <div class="bar-item"><span class="bar-label">ParseRate</span><div class="bar-track"><div class="bar-fill" style="width:100%;background:#9FE1CB;"></div></div><span class="bar-val">100%</span></div>
-        <div class="bar-item"><span class="bar-label">Halluc.</span><div class="bar-track"><div class="bar-fill" style="width:3.3%;background:#E24B4A;"></div></div><span class="bar-val">3.3%</span></div>
+        <div class="bar-item"><span class="bar-label">Halluc.</span><div class="bar-track"><div class="bar-fill" style="width:3.3%;background:#E24B4A;"></div></div><span class="bar-val">3,3%</span></div>
       </div>
       <div class="model-stats">
-        <div><div class="stat-label">LATÊNCIA</div><div class="stat-value">0.70<span class="stat-unit">s</span></div></div>
-        <div><div class="stat-label">TOK/CAMPO</div><div class="stat-value">231<span class="stat-unit">tok</span></div></div>
+        <div><div class="stat-label">LATÊNCIA</div><div class="stat-value">0,79<span class="stat-unit">s</span></div></div>
+        <div><div class="stat-label">TOK/CAMPO</div><div class="stat-value">234<span class="stat-unit">tok</span></div></div>
         <div><div class="stat-label">CONVERSAS OK</div><div class="stat-value">15<span class="stat-unit">/15</span></div></div>
-        <div><div class="stat-label">SCHEMA</div><div class="stat-value" style="color:#b85c00;">93<span class="stat-unit">%</span></div></div>
+        <div><div class="stat-label">SUMMARY</div><div class="stat-value" style="color:#c0392b;">0<span class="stat-unit">%</span></div></div>
       </div>
     </div>
 
+    <!-- RANK 3 -->
     <div class="model-row">
       <div>
-        <div class="model-pos">02</div>
+        <div class="model-pos">03</div>
         <div class="model-name">llama-3.1-8b-instant</div>
         <div class="model-meta">Meta · 8B · Groq · gratuito</div>
         <div class="model-tags">
           <span class="tag tag-oss">open-source</span>
-          <span class="tag tag-warn">10% hallucination</span>
+          <span class="tag tag-warn">10% alucinação</span>
         </div>
       </div>
       <div class="bar-group">
-        <div class="bar-item"><span class="bar-label">F1</span><div class="bar-track"><div class="bar-fill" style="width:49.8%;background:#378ADD;"></div></div><span class="bar-val" style="color:#378ADD;">49.8%</span></div>
-        <div class="bar-item"><span class="bar-label">Precision</span><div class="bar-track"><div class="bar-fill" style="width:54.2%;background:#378ADD;"></div></div><span class="bar-val">54.2%</span></div>
-        <div class="bar-item"><span class="bar-label">Recall</span><div class="bar-track"><div class="bar-fill" style="width:46.2%;background:#378ADD;"></div></div><span class="bar-val">46.2%</span></div>
+        <div class="bar-item"><span class="bar-label">F1</span><div class="bar-track"><div class="bar-fill" style="width:49%;background:#378ADD;"></div></div><span class="bar-val" style="color:#378ADD;">49,0%</span></div>
+        <div class="bar-item"><span class="bar-label">Precision</span><div class="bar-track"><div class="bar-fill" style="width:53.6%;background:#378ADD;"></div></div><span class="bar-val">53,6%</span></div>
+        <div class="bar-item"><span class="bar-label">Recall</span><div class="bar-track"><div class="bar-fill" style="width:45.3%;background:#378ADD;"></div></div><span class="bar-val">45,3%</span></div>
         <div class="bar-item"><span class="bar-label">ParseRate</span><div class="bar-track"><div class="bar-fill" style="width:100%;background:#B5D4F4;"></div></div><span class="bar-val">100%</span></div>
-        <div class="bar-item"><span class="bar-label">Halluc.</span><div class="bar-track"><div class="bar-fill" style="width:10%;background:#E24B4A;"></div></div><span class="bar-val" style="color:#c0392b;">10.0%</span></div>
+        <div class="bar-item"><span class="bar-label">Halluc.</span><div class="bar-track"><div class="bar-fill" style="width:10%;background:#E24B4A;"></div></div><span class="bar-val" style="color:#c0392b;">10,0%</span></div>
       </div>
       <div class="model-stats">
-        <div><div class="stat-label">LATÊNCIA</div><div class="stat-value">11.05<span class="stat-unit">s</span></div></div>
-        <div><div class="stat-label">TOK/CAMPO</div><div class="stat-value">262<span class="stat-unit">tok</span></div></div>
+        <div><div class="stat-label">LATÊNCIA</div><div class="stat-value">9,10<span class="stat-unit">s</span></div></div>
+        <div><div class="stat-label">TOK/CAMPO</div><div class="stat-value">271<span class="stat-unit">tok</span></div></div>
         <div><div class="stat-label">CONVERSAS OK</div><div class="stat-value">15<span class="stat-unit">/15</span></div></div>
         <div><div class="stat-label">SUMMARY</div><div class="stat-value" style="color:#b85c00;">40<span class="stat-unit">%</span></div></div>
       </div>
     </div>
 
-    <div class="model-row">
-      <div>
-        <div class="model-pos">03</div>
-        <div class="model-name">allam-2-7b</div>
-        <div class="model-meta">SDAIA · 7B · Groq · não OSS</div>
-        <div class="model-tags">
-          <span class="tag tag-err">4 erros JSON</span>
-          <span class="tag tag-warn">7.6% hallucination</span>
-        </div>
-      </div>
-      <div class="bar-group">
-        <div class="bar-item"><span class="bar-label">F1</span><div class="bar-track"><div class="bar-fill" style="width:40.8%;background:#EF9F27;"></div></div><span class="bar-val" style="color:#b85c00;">40.8%</span></div>
-        <div class="bar-item"><span class="bar-label">Precision</span><div class="bar-track"><div class="bar-fill" style="width:76.2%;background:#EF9F27;"></div></div><span class="bar-val">76.2%</span></div>
-        <div class="bar-item"><span class="bar-label">Recall</span><div class="bar-track"><div class="bar-fill" style="width:28.6%;background:#EF9F27;"></div></div><span class="bar-val">28.6%</span></div>
-        <div class="bar-item"><span class="bar-label">ParseRate</span><div class="bar-track"><div class="bar-fill" style="width:73.3%;background:#FAC775;"></div></div><span class="bar-val">73.3%</span></div>
-        <div class="bar-item"><span class="bar-label">Halluc.</span><div class="bar-track"><div class="bar-fill" style="width:7.6%;background:#E24B4A;"></div></div><span class="bar-val" style="color:#c0392b;">7.6%</span></div>
-      </div>
-      <div class="model-stats">
-        <div><div class="stat-label">LATÊNCIA</div><div class="stat-value">11.92<span class="stat-unit">s</span></div></div>
-        <div><div class="stat-label">TOK/CAMPO</div><div class="stat-value">609<span class="stat-unit">tok</span></div></div>
-        <div><div class="stat-label">CONVERSAS OK</div><div class="stat-value" style="color:#c0392b;">11<span class="stat-unit">/15</span></div></div>
-        <div><div class="stat-label">SUMMARY</div><div class="stat-value" style="color:#c0392b;">0<span class="stat-unit">%</span></div></div>
-      </div>
-    </div>
-
+    <!-- RANK 4 -->
     <div class="model-row">
       <div>
         <div class="model-pos" style="color:#d8d4cc;">04</div>
-        <div class="model-name">groq/compound-mini</div>
-        <div class="model-meta">Groq · não OSS · rate limit</div>
+        <div class="model-name">allam-2-7b</div>
+        <div class="model-meta">SDAIA · 7B · Groq · não OSS</div>
         <div class="model-tags">
-          <span class="tag tag-err">80% rate limit</span>
-          <span class="tag" style="background:#f0ede8;color:#9a9590;">inconclusivo</span>
+          <span class="tag tag-err">7 erros JSON</span>
+          <span class="tag tag-err">não recomendado</span>
         </div>
       </div>
       <div class="bar-group">
-        <div class="bar-item"><span class="bar-label">F1*</span><div class="bar-track"><div class="bar-fill" style="width:55.8%;background:#d8d4cc;"></div></div><span class="bar-val" style="color:#9a9590;">55.8%</span></div>
-        <div class="bar-item"><span class="bar-label">Precision</span><div class="bar-track"><div class="bar-fill" style="width:61.3%;background:#d8d4cc;"></div></div><span class="bar-val" style="color:#9a9590;">61.3%</span></div>
-        <div class="bar-item"><span class="bar-label">Recall</span><div class="bar-track"><div class="bar-fill" style="width:51.4%;background:#d8d4cc;"></div></div><span class="bar-val" style="color:#9a9590;">51.4%</span></div>
-        <div class="bar-item"><span class="bar-label">ParseRate</span><div class="bar-track"><div class="bar-fill" style="width:20%;background:#F7C1C1;"></div></div><span class="bar-val" style="color:#c0392b;">20%</span></div>
-        <div class="bar-item"><span class="bar-label">Halluc.</span><div class="bar-track"><div class="bar-fill" style="width:0%;"></div></div><span class="bar-val">0.0%</span></div>
+        <div class="bar-item"><span class="bar-label">F1</span><div class="bar-track"><div class="bar-fill" style="width:38.7%;background:#EF9F27;"></div></div><span class="bar-val" style="color:#b85c00;">38,7%</span></div>
+        <div class="bar-item"><span class="bar-label">Precision</span><div class="bar-track"><div class="bar-fill" style="width:78.5%;background:#EF9F27;"></div></div><span class="bar-val">78,5%</span></div>
+        <div class="bar-item"><span class="bar-label">Recall</span><div class="bar-track"><div class="bar-fill" style="width:26.8%;background:#EF9F27;"></div></div><span class="bar-val">26,8%</span></div>
+        <div class="bar-item"><span class="bar-label">ParseRate</span><div class="bar-track"><div class="bar-fill" style="width:53.3%;background:#FAC775;"></div></div><span class="bar-val" style="color:#c0392b;">53,3%</span></div>
+        <div class="bar-item"><span class="bar-label">Halluc.</span><div class="bar-track"><div class="bar-fill" style="width:4.2%;background:#E24B4A;"></div></div><span class="bar-val">4,2%</span></div>
       </div>
       <div class="model-stats">
-        <div><div class="stat-label">LATÊNCIA</div><div class="stat-value">2.57<span class="stat-unit">s</span></div></div>
-        <div><div class="stat-label">TOK/CAMPO</div><div class="stat-value" style="color:#c0392b;">743<span class="stat-unit">tok</span></div></div>
-        <div><div class="stat-label">CONVERSAS OK</div><div class="stat-value" style="color:#c0392b;">3<span class="stat-unit">/15</span></div></div>
-        <div><div class="stat-label">NOTA</div><div class="stat-value" style="font-size:11px;color:#9a9590;">inconclusivo</div></div>
+        <div><div class="stat-label">LATÊNCIA</div><div class="stat-value">11,03<span class="stat-unit">s</span></div></div>
+        <div><div class="stat-label">TOK/CAMPO</div><div class="stat-value" style="color:#c0392b;">698<span class="stat-unit">tok</span></div></div>
+        <div><div class="stat-label">CONVERSAS OK</div><div class="stat-value" style="color:#c0392b;">8<span class="stat-unit">/15</span></div></div>
+        <div><div class="stat-label">SUMMARY</div><div class="stat-value" style="color:#c0392b;">0<span class="stat-unit">%</span></div></div>
       </div>
     </div>
   </div>
-  <p style="font-size:11px;color:#9a9590;margin-top:8px;font-family:'DM Mono',monospace;">* groq/compound-mini: F1 calculado sobre 3/15 conversas — resultado estatisticamente inconclusivo.</p>
+  <p style="font-size:11px;color:#9a9590;margin-top:8px;font-family:'DM Mono',monospace;">† allam-2-7b: 7 de 15 conversas falharam com erro de JSON inválido. Os valores referem-se às 8 conversas processadas com sucesso.</p>
 </div>
 
 <div class="section">
@@ -261,19 +264,19 @@ body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(
   <div class="charts-grid">
     <div class="chart-box">
       <div class="chart-title">F1 · Precision · Recall por modelo</div>
-      <div style="position:relative;width:100%;height:220px;"><canvas id="c1" role="img" aria-label="F1 Precision Recall por modelo"></canvas></div>
+      <div style="position:relative;width:100%;height:220px;"><canvas id="c1"></canvas></div>
     </div>
     <div class="chart-box">
-      <div class="chart-title">Score vs Latência — trade-off</div>
-      <div style="position:relative;width:100%;height:220px;"><canvas id="c2" role="img" aria-label="F1 vs Latencia"></canvas></div>
+      <div class="chart-title">F1 vs Latência — trade-off</div>
+      <div style="position:relative;width:100%;height:220px;"><canvas id="c2"></canvas></div>
     </div>
     <div class="chart-box">
       <div class="chart-title">Token efficiency (tokens por campo correcto)</div>
-      <div style="position:relative;width:100%;height:200px;"><canvas id="c3" role="img" aria-label="Token efficiency"></canvas></div>
+      <div style="position:relative;width:100%;height:200px;"><canvas id="c3"></canvas></div>
     </div>
     <div class="chart-box">
       <div class="chart-title">JSON Parse Rate — fiabilidade de output</div>
-      <div style="position:relative;width:100%;height:200px;"><canvas id="c4" role="img" aria-label="Parse rate"></canvas></div>
+      <div style="position:relative;width:100%;height:200px;"><canvas id="c4"></canvas></div>
     </div>
   </div>
 </div>
@@ -288,35 +291,107 @@ body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(
     <thead>
       <tr>
         <th>Métrica</th>
-        <th>llama-4-scout-17b</th>
+        <th>llama-3.3-70b</th>
+        <th>llama-4-scout-17b ★</th>
         <th>llama-3.1-8b</th>
-        <th>allam-2-7b</th>
-        <th>compound-mini*</th>
+        <th>allam-2-7b †</th>
       </tr>
     </thead>
     <tbody>
-      <tr><td colspan="5" style="background:#f0ede8;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.08em;color:#5a5550;padding:8px 12px;">DATA FIDELITY</td></tr>
-      <tr><td><div class="param-name">F1-Score</div><div class="param-desc">Média harmónica Precision/Recall — métrica principal</div></td><td class="cell-mid" style="color:#1a7a5e;">54.0%</td><td class="cell-mid">49.8%</td><td class="cell-bad">40.8%</td><td class="cell-na">55.8%*</td></tr>
-      <tr><td><div class="param-name">Precision</div><div class="param-desc">Dos campos extraídos, % correctos</div></td><td class="cell-mid">62.6%</td><td class="cell-mid">54.2%</td><td class="cell-good">76.2%</td><td class="cell-na">61.3%*</td></tr>
-      <tr><td><div class="param-name">Recall</div><div class="param-desc">Dos campos no ground truth, % extraídos</div></td><td class="cell-mid">47.9%</td><td class="cell-mid">46.2%</td><td class="cell-bad">28.6%</td><td class="cell-na">51.4%*</td></tr>
-      <tr><td><div class="param-name">Hallucination Rate</div><div class="param-desc">Campos inventados sem evidência na conversa</div></td><td class="cell-good">3.3%</td><td class="cell-bad">10.0%</td><td class="cell-mid">7.6%</td><td class="cell-good">0.0%</td></tr>
-      <tr><td colspan="5" style="background:#f0ede8;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.08em;color:#5a5550;padding:8px 12px;">SCHEMA COMPLIANCE</td></tr>
-      <tr><td><div class="param-name">Schema Validity</div><div class="param-desc">JSON segue a estrutura definida (tipos, campos)</div></td><td class="cell-mid">93.3%</td><td class="cell-good">100%</td><td class="cell-good">100%</td><td class="cell-good">100%</td></tr>
-      <tr><td><div class="param-name">Null Discipline</div><div class="param-desc">Sem "desconhecido" ou strings vazias</div></td><td class="cell-good">100%</td><td class="cell-good">100%</td><td class="cell-good">100%</td><td class="cell-good">100%</td></tr>
-      <tr><td><div class="param-name">Language Compliance</div><div class="param-desc">Campos em português (não male/female)</div></td><td class="cell-good">100%</td><td class="cell-good">100%</td><td class="cell-good">100%</td><td class="cell-good">100%</td></tr>
-      <tr><td colspan="5" style="background:#f0ede8;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.08em;color:#5a5550;padding:8px 12px;">OPERATIONAL / DIAGNOSTIC</td></tr>
-      <tr><td><div class="param-name">Latência média</div><div class="param-desc">Tempo de resposta por chamada à API</div></td><td class="cell-good">0.70s</td><td class="cell-bad">11.05s</td><td class="cell-bad">11.92s</td><td class="cell-na">2.57s*</td></tr>
-      <tr><td><div class="param-name">Token Efficiency</div><div class="param-desc">Tokens gastos por campo correctamente extraído</div></td><td class="cell-good">231</td><td class="cell-good">262</td><td class="cell-bad">609</td><td class="cell-bad">743*</td></tr>
-      <tr><td><div class="param-name">JSON Parse Rate</div><div class="param-desc">% de respostas parseáveis sem erro</div></td><td class="cell-good">100%</td><td class="cell-good">100%</td><td class="cell-mid">73.3%</td><td class="cell-bad">20%</td></tr>
-      <tr><td><div class="param-name">Followup Actionability</div><div class="param-desc">follow_up_actions são strings accionáveis</div></td><td class="cell-good">100%</td><td class="cell-good">100%</td><td class="cell-good">100%</td><td class="cell-good">100%</td></tr>
-      <tr><td><div class="param-name">Summary Quality</div><div class="param-desc">Summary presente e com conteúdo (&gt;30 chars)</div></td><td class="cell-bad">0%</td><td class="cell-mid">40%</td><td class="cell-bad">0%</td><td class="cell-good">100%*</td></tr>
+      <tr><td colspan="5" style="background:#f0ede8;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.08em;color:#5a5550;padding:8px 12px;">FIDELIDADE DE DADOS</td></tr>
+      <tr>
+        <td><div class="param-name">F1-Score</div><div class="param-desc">Métrica principal — média harmónica de Precisão e Recall</div></td>
+        <td class="cell-mid" style="color:#1a7a5e;"><b>54,7%</b></td>
+        <td class="cell-mid">53,1%</td>
+        <td class="cell-mid">49,0%</td>
+        <td class="cell-bad">38,7%</td>
+      </tr>
+      <tr>
+        <td><div class="param-name">Precisão</div><div class="param-desc">Dos campos extraídos, % que estão correctos</div></td>
+        <td>61,1%</td>
+        <td><b>61,4%</b></td>
+        <td>53,6%</td>
+        <td class="cell-good">78,5%</td>
+      </tr>
+      <tr>
+        <td><div class="param-name">Recall</div><div class="param-desc">Dos campos no ground truth, % que foram extraídos</div></td>
+        <td class="cell-mid"><b>49,8%</b></td>
+        <td class="cell-mid">47,2%</td>
+        <td class="cell-mid">45,3%</td>
+        <td class="cell-bad">26,8%</td>
+      </tr>
+      <tr>
+        <td><div class="param-name">Taxa de Alucinação</div><div class="param-desc">Campos preenchidos com informação não mencionada na conversa</div></td>
+        <td class="cell-good">3,3%</td>
+        <td class="cell-good">3,3%</td>
+        <td class="cell-bad">10,0%</td>
+        <td class="cell-mid">4,2%</td>
+      </tr>
+      <tr><td colspan="5" style="background:#f0ede8;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.08em;color:#5a5550;padding:8px 12px;">CONFORMIDADE DE SCHEMA</td></tr>
+      <tr>
+        <td><div class="param-name">Validade do JSON</div><div class="param-desc">Resposta segue a estrutura definida no prompt</div></td>
+        <td class="cell-mid">93,3%</td>
+        <td class="cell-mid">93,3%</td>
+        <td class="cell-good">100%</td>
+        <td class="cell-good">100%</td>
+      </tr>
+      <tr>
+        <td><div class="param-name">Disciplina de null</div><div class="param-desc">Sem "desconhecido" ou strings vazias em campos sem informação</div></td>
+        <td class="cell-good">100%</td>
+        <td class="cell-good">100%</td>
+        <td class="cell-good">100%</td>
+        <td class="cell-good">100%</td>
+      </tr>
+      <tr>
+        <td><div class="param-name">Conformidade linguística</div><div class="param-desc">Campos em português europeu (não male/female)</div></td>
+        <td class="cell-good">100%</td>
+        <td class="cell-good">100%</td>
+        <td class="cell-good">100%</td>
+        <td class="cell-good">100%</td>
+      </tr>
+      <tr><td colspan="5" style="background:#f0ede8;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.08em;color:#5a5550;padding:8px 12px;">MÉTRICAS OPERACIONAIS</td></tr>
+      <tr>
+        <td><div class="param-name">Latência média</div><div class="param-desc">Tempo de resposta por chamada à API</div></td>
+        <td class="cell-mid">3,05s</td>
+        <td class="cell-good"><b>0,79s</b></td>
+        <td class="cell-bad">9,10s</td>
+        <td class="cell-bad">11,03s</td>
+      </tr>
+      <tr>
+        <td><div class="param-name">Eficiência de tokens</div><div class="param-desc">Tokens consumidos por campo correctamente extraído</div></td>
+        <td>242</td>
+        <td class="cell-good"><b>234</b></td>
+        <td>271</td>
+        <td class="cell-bad">698</td>
+      </tr>
+      <tr>
+        <td><div class="param-name">Taxa de parse JSON</div><div class="param-desc">% de respostas que o sistema conseguiu processar sem erros</div></td>
+        <td class="cell-good">100%</td>
+        <td class="cell-good">100%</td>
+        <td class="cell-good">100%</td>
+        <td class="cell-bad">53,3%</td>
+      </tr>
+      <tr>
+        <td><div class="param-name">Acionabilidade das ações</div><div class="param-desc">follow_up_actions contém ações concretas e utilizáveis</div></td>
+        <td class="cell-good">100%</td>
+        <td class="cell-good">100%</td>
+        <td class="cell-good">100%</td>
+        <td class="cell-good">100%</td>
+      </tr>
+      <tr>
+        <td><div class="param-name">Qualidade do sumário</div><div class="param-desc">Campo summary presente e com conteúdo substantivo</div></td>
+        <td class="cell-bad">13,3%</td>
+        <td class="cell-bad">0,0%</td>
+        <td class="cell-mid">40,0%</td>
+        <td class="cell-bad">0,0%</td>
+      </tr>
     </tbody>
   </table>
   <div class="legend">
     <div class="legend-item"><div class="legend-dot" style="background:#1a7a5e;"></div>Bom (≥80%)</div>
     <div class="legend-item"><div class="legend-dot" style="background:#b85c00;"></div>Médio (50–79%)</div>
     <div class="legend-item"><div class="legend-dot" style="background:#c0392b;"></div>Fraco (&lt;50%)</div>
-    <div class="legend-item"><div class="legend-dot" style="background:#d8d4cc;"></div>Inconclusivo</div>
+    <div class="legend-item" style="margin-left:auto;"><b>★</b> modelo selecionado &nbsp;&nbsp; <b>†</b> 7/15 conversas falharam com erro de JSON</div>
   </div>
 </div>
 
@@ -324,49 +399,42 @@ body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(
   <div class="conclusion-hero">
     <h2>Conclusão e recomendação</h2>
     <div class="verdict">
-      Com base nos resultados do EVAL sobre 15 conversas sintéticas em português europeu,
-      o modelo a usar no VoiceCRM é o <strong>meta-llama/llama-4-scout-17b-16e-instruct</strong>,
-      disponível gratuitamente via Groq API.
+      Com base na avaliação sobre 15 conversas sintéticas em português europeu, o modelo selecionado para integração no VoiceCRM é o <strong>meta-llama/llama-4-scout-17b-16e-instruct</strong>, disponível gratuitamente via Groq API.
     </div>
   </div>
-
   <div class="conclusion-grid">
     <div class="conclusion-block">
-      <h3>Porquê este modelo?</h3>
-      <p>É o único que combina os três critérios essenciais para uma app de atendimento em loja: <strong>fiabilidade total de output</strong> (100% de respostas parseáveis sem erros JSON), <strong>latência aceitável para uso em tempo real</strong> (0.70s por chamada) e o <strong>melhor F1-Score entre os modelos com dados completos</strong> (54.0%). Em comparação, o llama-3.1-8b é 15x mais lento (11.05s), tem mais hallucinations (10.0% vs 3.3%) e F1 inferior (49.8%).</p>
+      <h3>Porquê não o llama-3.3-70b?</h3>
+      <p>O <strong>llama-3.3-70b</strong> obteve o melhor F1 (54,7%) mas com latência de 3,05s — quatro vezes superior à do llama-4-scout (0,79s). A diferença de F1 é de apenas 1,6 pontos percentuais, insuficiente para justificar maior latência em contexto de atendimento em loja onde o consultor aguarda o resultado após a gravação.</p>
+    </div>
+    <div class="conclusion-block">
+      <h3>Porquê o llama-4-scout?</h3>
+      <p>É o único modelo que combina <strong>latência adequada para uso em tempo real</strong> (0,79s), <strong>100% de taxa de parse JSON</strong>, <strong>taxa de alucinação baixa</strong> (3,3%) e <strong>melhor eficiência de tokens</strong> (234 tok/campo). Com 15/15 conversas processadas sem erros, é o mais fiável dos modelos testados.</p>
       <div class="highlight"><p>model="meta-llama/llama-4-scout-17b-16e-instruct"</p></div>
     </div>
-
     <div class="conclusion-block">
-      <h3>O F1 de 54% é bom ou mau?</h3>
-      <p>É <strong>esperado e aceitável</strong>. O recall sistémico de ~48% reflecte o facto de campos como <strong>age_range, client_tier e estimated_spend</strong> raramente serem ditos de forma explícita numa conversa real — ninguém afirma "tenho entre 40 e 50 anos" ou "sou cliente VIP". O modelo extrai correctamente os campos que aparecem na conversa. A hallucination rate de 3.3% confirma este comportamento conservador e correcto — não inventa o que não ouviu.</p>
+      <h3>O F1 de ~53% é baixo?</h3>
+      <p>É <strong>esperado</strong>. O recall sistémico de ~47% reflecte o facto de campos como <strong>age_range, client_tier e estimated_spend</strong> raramente serem mencionados de forma explícita numa conversa real. O modelo não inventa o que não ouviu — a taxa de alucinação de 3,3% confirma este comportamento correcto.</p>
     </div>
-
     <div class="conclusion-block">
       <h3>O que não usar e porquê</h3>
-      <p>O <strong>allam-2-7b</strong> falha em 4 de 15 conversas e inventa dados em 7.6% dos casos — inaceitável num CRM de luxo onde dados incorrectos de clientes comprometem o atendimento. O <strong>groq/compound-mini</strong> atingiu o rate limit em 12 de 15 chamadas, tornando os resultados estatisticamente inconclusivos e o modelo inviável para produção no plano gratuito.</p>
-    </div>
-
-    <div class="conclusion-block">
-      <h3>O que melhorar antes de produção</h3>
-      <p>O <strong>summary está ausente em 100% das respostas</strong> do llama-4-scout. Uma instrução adicional no prompt resolve este problema sem impacto no resto da extração. Adicionalmente, testar o <strong>llama-3.3-70b-versatile</strong> após renovação do rate limit — esperada melhoria de 10–15% em recall dado o tamanho do modelo. Se o resultado for superior com latência aceitável, considerar migrar para a versão final da dissertação.</p>
-      <div class="highlight"><p>Adicionar ao prompt: "O campo summary é obrigatório e deve ter entre 50 e 150 palavras."</p></div>
+      <p>O <strong>allam-2-7b</strong> falha em 7 de 15 conversas por gerar JSON inválido — inviável para produção. O <strong>llama-3.1-8b</strong> apresenta taxa de alucinação de 10,0% — o triplo dos modelos anteriores — inaceitável num CRM de luxo onde a precisão dos dados de cliente é crítica.</p>
     </div>
   </div>
 </div>
 
 <div class="footer">
-  <div class="footer-left">VoiceCRM · Dissertação de Mestrado · ISEP · Rita Pinto · 2026<br>Golden Dataset v3.0 · 15 conversas · Groq API · eval_results_v2_20260607_0051.json</div>
+  <div class="footer-left">VoiceCRM · Dissertação de Mestrado · ISEP · Rita Pinto · 2026<br>Ficheiro de resultados: eval_results_v2_20260608_0056.json · 15 conversas · Groq API</div>
   <div class="footer-right">ritapinto1230205.github.io/Eval-report</div>
 </div>
 
 </div>
 <script>
-const tc='#9a9590',gc='rgba(0,0,0,0.05)';
-new Chart(document.getElementById('c1'),{type:'bar',data:{labels:['llama-4-scout','llama-3.1-8b','allam-2-7b'],datasets:[{label:'F1',data:[54.0,49.8,40.8],backgroundColor:'#0a0a0a'},{label:'Precision',data:[62.6,54.2,76.2],backgroundColor:'#5a5550'},{label:'Recall',data:[47.9,46.2,28.6],backgroundColor:'#d8d4cc'}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:true,position:'bottom',labels:{color:tc,font:{size:11,family:'DM Mono'},boxWidth:10}}},scales:{x:{ticks:{color:tc,font:{size:10,family:'DM Mono'}},grid:{color:gc}},y:{min:0,max:100,ticks:{color:tc,font:{size:10},callback:v=>v+'%'},grid:{color:gc}}}}});
-new Chart(document.getElementById('c2'),{type:'bubble',data:{datasets:[{label:'llama-4-scout',data:[{x:0.7,y:54.0,r:14}],backgroundColor:'rgba(26,122,94,0.8)'},{label:'llama-3.1-8b',data:[{x:11.05,y:49.8,r:12}],backgroundColor:'rgba(10,10,10,0.8)'},{label:'allam-2-7b',data:[{x:11.92,y:40.8,r:10}],backgroundColor:'rgba(184,92,0,0.8)'}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:true,position:'bottom',labels:{color:tc,font:{size:11,family:'DM Mono'},boxWidth:10}},tooltip:{callbacks:{label:ctx=>ctx.dataset.label+': F1='+ctx.raw.y+'% lat='+ctx.raw.x+'s'}}},scales:{x:{title:{display:true,text:'Latência (s)',color:tc,font:{size:10}},ticks:{color:tc,font:{size:10}},grid:{color:gc},min:-1,max:15},y:{title:{display:true,text:'F1 (%)',color:tc,font:{size:10}},ticks:{color:tc,font:{size:10},callback:v=>v+'%'},grid:{color:gc},min:30,max:70}}}});
-new Chart(document.getElementById('c3'),{type:'bar',data:{labels:['llama-4-scout','llama-3.1-8b','allam-2-7b','compound-mini*'],datasets:[{label:'Tokens/campo',data:[231,262,609,743],backgroundColor:['#1a7a5e','#0a0a0a','#b85c00','#d8d4cc'],borderRadius:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{color:tc,font:{size:10,family:'DM Mono'}},grid:{color:gc}},y:{ticks:{color:tc,font:{size:10}},grid:{color:gc}}}}});
-new Chart(document.getElementById('c4'),{type:'bar',data:{labels:['llama-4-scout','llama-3.1-8b','allam-2-7b','compound-mini'],datasets:[{label:'Parse Rate %',data:[100,100,73.3,20],backgroundColor:['#1a7a5e','#0a0a0a','#b85c00','#c0392b'],borderRadius:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{color:tc,font:{size:10,family:'DM Mono'}},grid:{color:gc}},y:{min:0,max:100,ticks:{color:tc,font:{size:10},callback:v=>v+'%'},grid:{color:gc}}}}});
+const tc='#9a9590', gc='rgba(0,0,0,0.05)';
+new Chart(document.getElementById('c1'),{type:'bar',data:{labels:['llama-3.3-70b','llama-4-scout','llama-3.1-8b','allam-2-7b'],datasets:[{label:'F1',data:[54.7,53.1,49.0,38.7],backgroundColor:'#0a0a0a'},{label:'Precisão',data:[61.1,61.4,53.6,78.5],backgroundColor:'#5a5550'},{label:'Recall',data:[49.8,47.2,45.3,26.8],backgroundColor:'#d8d4cc'}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:true,position:'bottom',labels:{color:tc,font:{size:11,family:'DM Mono'},boxWidth:10}}},scales:{x:{ticks:{color:tc,font:{size:10,family:'DM Mono'}},grid:{color:gc}},y:{min:0,max:100,ticks:{color:tc,callback:v=>v+'%'},grid:{color:gc}}}}});
+new Chart(document.getElementById('c2'),{type:'bubble',data:{datasets:[{label:'llama-3.3-70b',data:[{x:3.05,y:54.7,r:14}],backgroundColor:'rgba(26,122,94,0.8)'},{label:'llama-4-scout',data:[{x:0.79,y:53.1,r:14}],backgroundColor:'rgba(26,74,122,0.8)'},{label:'llama-3.1-8b',data:[{x:9.1,y:49.0,r:12}],backgroundColor:'rgba(10,10,10,0.8)'},{label:'allam-2-7b',data:[{x:11.03,y:38.7,r:10}],backgroundColor:'rgba(184,92,0,0.8)'}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:true,position:'bottom',labels:{color:tc,font:{size:10,family:'DM Mono'},boxWidth:10}},tooltip:{callbacks:{label:ctx=>ctx.dataset.label+': F1='+ctx.raw.y+'% lat='+ctx.raw.x+'s'}}},scales:{x:{title:{display:true,text:'Latência (s)',color:tc,font:{size:10}},ticks:{color:tc},grid:{color:gc},min:-1,max:14},y:{title:{display:true,text:'F1 (%)',color:tc,font:{size:10}},ticks:{color:tc,callback:v=>v+'%'},grid:{color:gc},min:30,max:65}}}});
+new Chart(document.getElementById('c3'),{type:'bar',data:{labels:['llama-3.3-70b','llama-4-scout','llama-3.1-8b','allam-2-7b'],datasets:[{label:'Tokens/campo',data:[242,234,271,698],backgroundColor:['#1a7a5e','#1a4a7a','#0a0a0a','#b85c00'],borderRadius:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{color:tc,font:{size:10,family:'DM Mono'}},grid:{color:gc}},y:{ticks:{color:tc},grid:{color:gc}}}}});
+new Chart(document.getElementById('c4'),{type:'bar',data:{labels:['llama-3.3-70b','llama-4-scout','llama-3.1-8b','allam-2-7b'],datasets:[{label:'Parse Rate %',data:[100,100,100,53.3],backgroundColor:['#1a7a5e','#1a4a7a','#0a0a0a','#c0392b'],borderRadius:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{color:tc,font:{size:10,family:'DM Mono'}},grid:{color:gc}},y:{min:0,max:100,ticks:{color:tc,callback:v=>v+'%'},grid:{color:gc}}}}});
 </script>
 </body>
 </html>
